@@ -1,8 +1,8 @@
 from flask import Flask, request, render_template, jsonify
 import pandas as pd
-from dotenv import load_dotenv
 import logging
 from flask_cors import CORS # Import CORS
+
 
 
 # We only need these two main service files
