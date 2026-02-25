@@ -1,0 +1,186 @@
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(17, 24, 39, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.modalContent {
+  background-color: var(--white);
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  width: 100%;
+  max-width: 42rem;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.modalCloseButton {
+  padding: 0.25rem;
+  border-radius: 9999px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.modalCloseButton:hover {
+  background-color: var(--gray-200);
+}
+.modalCloseButton svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.modalBody {
+  overflow-y: auto;
+}
+
+.bodyCentered {
+  padding: 2rem;
+  text-align: center;
+}
+
+.loader {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary-600);
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.loaderTextLg {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: var(--gray-700);
+}
+.loaderTextSm {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+.errorText {
+  font-size: 1.125rem;
+  color: var(--red-600);
+}
+.closeButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--gray-200);
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.finishTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.finishScore {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary-600);
+}
+.finishScore span {
+  font-size: 1.25rem;
+  color: var(--gray-600);
+}
+.finishButton {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--green-600);
+  color: var(--white);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.finishButton:hover {
+  background-color: var(--green-700);
+}
+
+.quizContent {
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .quizContent {
+    padding: 1.5rem;
+  }
+}
+.quizQuestionInfo {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin-bottom: 0.5rem;
+}
+.quizQuestion {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.quizOptions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.quizOptionButton {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--gray-300);
+  text-align: left;
+  transition: all 0.2s;
+  background-color: var(--white);
+  cursor: pointer;
+}
+.quizOptionButton:hover {
+  background-color: var(--gray-100);
+}
+.quizOptionButton.selected {
+  background-color: var(--primary-500);
+  border-color: var(--primary-500);
+  color: var(--white);
+}
+
+.quizNextButton {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-600);
+  color: var(--white);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.quizNextButton:hover {
+  background-color: var(--primary-700);
+}
+.quizNextButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

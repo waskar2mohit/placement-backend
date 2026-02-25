@@ -1,0 +1,249 @@
+.formWrapper {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.stepper {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border: 1px solid var(--gray-200);
+}
+
+.stepperList {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.step {
+  flex: 1;
+  position: relative;
+}
+.step:not(:last-child) {
+  padding-right: 1rem;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.stepContent.active, .stepContent.completed {
+  opacity: 1;
+}
+
+.stepIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 2px solid;
+  transition: all 0.2s;
+
+  background-color: var(--gray-100);
+  color: var(--gray-500);
+  border-color: var(--gray-300);
+}
+.stepContent.active .stepIconWrapper {
+  background-color: var(--primary-600);
+  color: var(--white);
+  border-color: var(--primary-600);
+}
+.stepContent.completed .stepIconWrapper {
+  background-color: var(--green-500);
+  color: var(--white);
+  border-color: var(--green-500);
+}
+.stepIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.stepName {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gray-500);
+}
+@media (min-width: 640px) {
+  .stepName {
+    font-size: 0.875rem;
+  }
+}
+.stepContent.active .stepName, .stepContent.completed .stepName {
+  color: var(--primary-700);
+}
+
+.connector {
+  position: absolute;
+  top: 1.25rem; /* Aligns with center of icon */
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--gray-200);
+}
+.stepContent.completed ~ .connector {
+  background-color: var(--green-500);
+}
+
+
+.formContent {
+  background-color: var(--white);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--gray-200);
+}
+@media (min-width: 640px) {
+  .formContent {
+    padding: 2rem;
+  }
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+  text-align: center;
+  color: var(--gray-800);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gridSkills {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem 2rem;
+}
+@media (min-width: 768px) {
+  .gridSkills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skillSliderLabel {
+  display: flex;
+  justify-content: space-between;
+}
+.skillSliderLabel span:last-child {
+  font-weight: 700;
+  color: var(--primary-600);
+}
+
+.stepCenter {
+  padding: 2rem;
+  text-align: center;
+}
+.stepCenterIcon {
+  width: 4rem;
+  height: 4rem;
+  color: var(--primary-600);
+  margin: 0 auto 1rem;
+}
+.stepCenterIconSubmit {
+  width: 4rem;
+  height: 4rem;
+  color: var(--green-500);
+  margin: 0 auto 1rem;
+}
+.stepCenterTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.stepCenterText {
+  color: var(--gray-600);
+  margin-bottom: 1.5rem;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.stepCenterScore {
+  font-size: 3.75rem;
+  font-weight: 700;
+  color: var(--primary-600);
+  margin-bottom: 2rem;
+}
+.stepCenterScore span {
+  font-size: 1.5rem;
+  color: var(--gray-500);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonPrimary {
+  background-color: var(--primary-600);
+  color: var(--white);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+.buttonPrimary:not(:disabled):hover {
+  background-color: var(--primary-700);
+}
+.buttonPrimary.loading svg {
+  animation: spin 1s linear infinite;
+}
+
+.buttonSecondary {
+  background-color: var(--gray-200);
+  color: var(--gray-700);
+}
+.buttonSecondary:not(:disabled):hover {
+  background-color: var(--gray-300);
+}
+.buttonSecondary svg {
+  margin-right: 0.5rem;
+  margin-left: -0.25rem;
+}
+
+.buttonNav {
+  display: flex;
+  justify-content: space-between;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

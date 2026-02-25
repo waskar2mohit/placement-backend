@@ -1,0 +1,319 @@
+.container {
+  max-width: 72rem; /* Wider container for 2-col layout */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.backLink:hover {
+  color: var(--gray-900);
+}
+.backLink svg {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.25rem;
+}
+
+/* New 2-Column Grid */
+.resultsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 1024px) {
+  .resultsGrid {
+    grid-template-columns: 1fr 2fr; /* 1/3 for score, 2/3 for report */
+  }
+}
+
+/* Left Column: Score Card */
+.scoreCard {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: 1px solid var(--gray-200);
+  text-align: center;
+  align-self: start;
+}
+@media (min-width: 1024px) {
+  .scoreCard {
+    position: sticky;
+    top: 6rem; /* Adjust based on your header height */
+  }
+}
+
+.scoreTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 1rem;
+}
+
+/* Progress Ring from output.html */
+.progressRing {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.progressSvg {
+  width: 12rem;
+  height: 12rem;
+}
+.progressBg {
+  color: var(--gray-200);
+}
+.progressCircle {
+  transition: stroke-dashoffset 0.9s ease-in-out;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+.progressText {
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.predictionText {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Right Column: Report Card */
+.reportCard {
+  background-color: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: 1px solid var(--gray-200);
+}
+
+.reportTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+.reportQuote {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  margin-bottom: 2rem;
+  font-style: italic;
+  border-left: 4px solid var(--primary-300);
+  padding-left: 1rem;
+}
+
+.reportSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .reportSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* List Headers */
+.listHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Strength Box */
+.strengthBox {
+  padding: 1.5rem;
+  background-color: var(--green-50);
+  border: 1px solid var(--green-200);
+  border-radius: 0.5rem;
+}
+.listIconStrength {
+  color: var(--green-600);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.listTitleStrength {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--green-800);
+}
+.listItemIconStrength {
+  color: var(--green-500);
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.25rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Improvement Box */
+.improvementBox {
+  padding: 1.5rem;
+  background-color: var(--yellow-50);
+  border: 1px solid var(--yellow-200);
+  border-radius: 0.5rem;
+}
+.listIconImprovement {
+  color: var(--yellow-600);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.listTitleImprovement {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--yellow-800);
+}
+.listItemIconImprovement {
+  color: var(--yellow-500);
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.25rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Generic List Styles */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0;
+  list-style-type: none;
+}
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  color: var(--gray-700);
+}
+
+/* Roadmap/Advice Box */
+.roadmapBox {
+  padding: 1.5rem;
+  background-color: var(--primary-50);
+  border: 1px solid var(--primary-200);
+  border-radius: 0.5rem;
+}
+.listIconRoadmap {
+  color: var(--primary-600);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.listTitleRoadmap {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-800);
+}
+.roadmapText {
+  color: var(--primary-800);
+  line-height: 1.625;
+  white-space: pre-line; /* Preserves line breaks from the API */
+}
+
+
+/* Helper classes for colors */
+.textGreen {
+  color: var(--green-600);
+}
+.textYellow {
+  color: var(--yellow-500);
+}
+.textRed {
+  color: var(--red-600);
+}
+
+/* Fallback for no recommendations */
+.stepCenter {
+  padding: 2rem;
+  text-align: center;
+  color: var(--gray-500);
+}
+.stepCenter svg {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+}
+.stepCenterTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 1rem;
+}
+.stepCenterText {
+  color: var(--gray-600);
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Add these new styles to Results.module.css */
+
+/* Speedometer Gauge Styles */
+.speedometer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.speedometerSvg {
+  width: 12rem; /* Control the size of the gauge */
+  height: auto;
+}
+
+.speedometerBg {
+  stroke: var(--gray-200); /* Background track color */
+}
+
+.speedometerValue {
+  transition: stroke-dashoffset 0.8s ease-in-out, stroke 0.5s;
+  stroke: var(--gray-800); /* Default stroke color */
+}
+
+.speedometerText {
+  position: absolute;
+  bottom: 10%; /* Position text inside the gauge */
+  font-size: 2.75rem; /* Larger text for percentage */
+  font-weight: 700;
+  transition: color 0.5s;
+}
+
+/* Override stroke color based on text color class */
+.speedometerValue.textGreen {
+  stroke: var(--green-500);
+}
+.speedometerValue.textYellow {
+  stroke: var(--yellow-500);
+}
+.speedometerValue.textRed {
+  stroke: var(--red-500);
+}
+
+/* Keep these color utility classes */
+.textGreen {
+  color: var(--green-600);
+}
+.textYellow {
+  color: var(--yellow-600);
+}
+.textRed {
+  color: var(--red-600);
+}
