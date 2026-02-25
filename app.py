@@ -4,8 +4,6 @@ from dotenv import load_dotenv
 import logging
 from flask_cors import CORS # Import CORS
 
-# Load environment variables from .env file FIRST
-load_dotenv()
 
 # We only need these two main service files
 from ml_service import MLService
